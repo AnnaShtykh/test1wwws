@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>{{COMPANY_NAME}} — Setup Guide</title>
+<style>
+  :root{
+    --ink:#12031c; --ink-70:rgba(18,3,28,.72); --muted:#909090;
+    --line:#ededed; --bg2:#f4f5f5;
+    --accent:#fc4a22; --accent-400:#fb7059; --accent-300:#fedbd3; --accent-200:#fff4f1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Arial,"Helvetica Neue",Helvetica,"Liberation Sans",sans-serif;
+       color:var(--ink);font-size:10.5px;line-height:1.55;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+  /* ── Dark brand header ── */
+  .hero{background:var(--ink);border-radius:14px;padding:18px 26px 16px;margin-bottom:16px;color:#fff;}
+  .pill{display:inline-block;background:var(--accent);color:#fff;font-size:8px;font-weight:700;
+        letter-spacing:.1em;text-transform:uppercase;padding:3px 11px;border-radius:20px;margin-bottom:8px;}
+  .hero h1{font-size:19px;font-weight:700;letter-spacing:-0.02em;line-height:1.22;color:#fff;}
+  .hero p{font-size:10px;color:rgba(255,255,255,.75);margin-top:5px;max-width:520px;}
+
+  /* ── Section blocks ── */
+  section{margin-bottom:14px;}
+  .subblock{page-break-inside:avoid;}
+  .stepnum{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+           border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:10px;
+           margin-right:9px;flex-shrink:0;}
+  h2{font-size:12.5px;font-weight:700;display:flex;align-items:center;margin-bottom:6px;
+     color:var(--ink);page-break-inside:avoid;page-break-after:avoid;}
+  .section-intro{margin-left:29px;margin-bottom:8px;color:var(--ink-70);font-size:10px;
+                 page-break-after:avoid;}
+  .subhead{margin-left:29px;margin-bottom:5px;font-size:9.5px;font-weight:700;color:var(--accent);
+           text-transform:uppercase;letter-spacing:.06em;}
+  .subhead:not(:first-child){margin-top:10px;}
+  .card{background:var(--bg2);border-radius:10px;padding:10px 15px;margin-left:29px;}
+  ol{margin:0;padding-left:17px;}
+  ol li{margin-bottom:4px;}
+  ol li:last-child{margin-bottom:0;}
+  .note{background:var(--accent-200);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+        padding:7px 14px;margin-top:8px;margin-left:29px;font-size:9.5px;color:var(--ink-70);}
+  .note b{color:var(--ink);}
+  .howto{margin-top:5px;}
+  .howto:first-child{margin-top:0;}
+  code{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1px 6px;
+       font-family:"Courier New",monospace;font-size:9px;color:var(--ink);}
+  .examples{margin-left:29px;display:flex;flex-direction:column;gap:5px;}
+  .example{background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 14px;
+           font-style:italic;color:var(--ink-70);font-size:9.5px;}
+  .example:before{content:"“";} .example:after{content:"”";}
+  .intro{color:var(--ink-70);margin-bottom:14px;font-size:10px;}
+</style></head>
+<body>
+
+<div class="hero">
+  <div class="pill">Setup Guide</div>
+  <h1>Getting started with your {{COMPANY_NAME}} brand system</h1>
+  <p>This guide walks you through setting up the tools we built so anyone
+     on your team can create on-brand content — no design or technical
+     background needed. It should take about ten minutes.</p>
+</div>
+
+<p class="intro">You received two things: a <b>Skill</b> and a <b>Project</b>.
+Both teach an AI assistant your brand's colors, fonts, voice, and rules, so it
+applies them automatically whenever you ask it to write or design something.
+Each one works in both Claude and ChatGPT — set up whichever you actually
+use, or all of them.</p>
+
+<section>
+  <h2><span class="stepnum">1</span>Setting up the Skill</h2>
+  <p class="section-intro">Install this once, in whichever product you use —
+     it then works automatically in every new chat, with no extra setup.</p>
+
+  <div class="subblock">
+    <div class="subhead">In Claude</div>
+    <div class="card">
+      <ol>
+        <li>Go to <code>claude.ai</code> and sign in (or open the Claude
+            desktop app).</li>
+        <li>Go to the left sidebar and click on <b>Customize → Skills</b>.</li>
+        <li>On the popup that opens, click the <b>+</b> button (top right
+            corner), then <b>"Upload a skill"</b>.</li>
+        <li>Choose the file <code>{{SLUG}}-skill.zip</code> that we
+            delivered to you.</li>
+        <li>Once it appears in your list, switch it on.</li>
+      </ol>
+    </div>
+    <div class="note">Once it's on, it works everywhere in Claude — Claude
+      Chat, Claude Code, Claude Design, and Claude Cowork.</div>
+  </div>
+
+  <div class="subblock">
+    <div class="subhead">In ChatGPT</div>
+    <div class="card">
+      <ol>
+        <li>In ChatGPT, click <b>Plugins</b> in the left sidebar.</li>
+        <li>Click the <b>Skills</b> tab at the top of the window that
+            opens.</li>
+        <li>Click the <b>+</b> button in the top right corner.</li>
+        <li>Click <b>"Upload from your computer"</b> and choose the same
+            file <code>{{SLUG}}-skill.zip</code>.</li>
+        <li>Once it finishes uploading, it's ready to use.</li>
+      </ol>
+    </div>
+    <div class="note">In ChatGPT, this only works in <b>Work mode</b> and in
+      <b>Codex</b> — not in a regular chat.</div>
+  </div>
+
+  <div class="subblock note">
+    <div class="howto"><b>How to use it?</b> Just mention {{COMPANY_NAME}} —
+      or, to be sure it's applied, tag it directly: <code>/{{SLUG}}-skill</code>
+      in Claude, <code>@{{SLUG}}-skill</code> in ChatGPT.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="stepnum">2</span>Setting up the Project</h2>
+  <p class="section-intro">Claude and ChatGPT each have their own "Project"
+     feature, set up almost the same way.</p>
+
+  <div class="subblock">
+    <div class="subhead">In Claude</div>
+    <div class="card">
+      <ol>
+        <li>Go to <code>claude.ai</code> and sign in.</li>
+        <li>Click <b>Projects</b> in the left sidebar, then <b>Create
+            project</b>, and name it "{{COMPANY_NAME}} Brand".</li>
+        <li>Open <code>{{SLUG}}-project/instructions.md</code> that we
+            delivered, copy all of its text, and paste it into the
+            project's instructions box.</li>
+        <li>Open the <code>{{SLUG}}-project/Sources</code> folder and
+            upload every file inside it to the project.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="subblock">
+    <div class="subhead">In ChatGPT</div>
+    <div class="card">
+      <ol>
+        <li>Go to <code>chatgpt.com</code> and sign in.</li>
+        <li>Click <b>Projects</b> in the left sidebar, then <b>New
+            project</b>, and name it "{{COMPANY_NAME}} Brand".</li>
+        <li>On the project's page, click the <b>•••</b> button in the top
+            right corner.</li>
+        <li>A "Project settings" window pops up. Inside it, find the
+            <b>Instructions</b> box and paste in the same
+            <code>instructions.md</code> text.</li>
+        <li>Still on the project's page, click the <b>Sources</b> tab, and
+            upload every file inside the <code>{{SLUG}}-project/Sources</code>
+            folder there.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="subblock note">{{FONT_NOTE}}
+    <div class="howto"><b>How to use it?</b> Start a new chat from inside
+      the project — your brand rules are applied automatically, no need to
+      repeat them.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="stepnum">3</span>A few things to try</h2>
+  <p class="section-intro">Just ask, in plain language. A few examples:</p>
+  <div class="examples">
+    <div class="example">Write a LinkedIn post announcing our new feature</div>
+    <div class="example">Make a 5-slide deck introducing {{COMPANY_NAME}} to a new partner</div>
+    <div class="example">Draft the copy for our homepage hero section</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="stepnum">4</span>If something looks off-brand</h2>
+  <div class="card">
+    Just say so — point out what looks wrong and ask for a fix. Both the
+    Skill and the Project have a full brand rulebook to check against (the
+    <code>do-dont</code> file), so a quick correction is usually all it takes.
+  </div>
+</section>
+
+</body></html>
